@@ -1,8 +1,15 @@
 # ai301-coursework
 
-This is your one repository for the whole course. You create it in unit 1
-from the course template, and its link is the whole submission at every
-check-in; graders open the folder for that unit's work.
+My coursework for CodePath AI301 (Fall 2026), a course on making a first open-source contribution with help from Claude Code skills I build along the way.
+
+The four skills in `tools/` grade each step of a contribution before it goes upstream:
+
+| Skill | Grades |
+|---|---|
+| `issue-select` | Whether a candidate issue is worth taking as a first contribution |
+| `repro-check` | A claim comment and reproduction report, before posting |
+| `plan-check` | A plan and plan comment, before posting and building |
+| `pr-precheck` | A pull request against its plan and issue, before submitting |
 
 ## What lives where
 
