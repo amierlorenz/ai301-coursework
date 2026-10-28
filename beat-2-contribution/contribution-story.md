@@ -8,9 +8,8 @@ format criteria grade exactly that. Your course repo link is the whole submissio
 files and no evidence uploads are part of Assignment 5.
 
 **Contribution Number:** [1]
-**Student:** [Student name]
-**GitHub Username:** [your GitHub username, exactly as it appears on your profile - no @, no
-profile URL. Your comments upstream are identified by this name.]
+**Student:** Amier Davis
+**GitHub Username:** amierlorenz
 **Issue:** [GitHub issue link]
 **Pull Request:** [GitHub PR link, once opened]
 
@@ -55,10 +54,12 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: making issue-scout my own**
 
 [2-4 sentences: what you built (the scout, your strategy), what broke
 or fell short, what changed because of it.]
+
+I built the search queries from my fit profile. My strategy originally scanned issues from repos that were brand new, so, I added a star range. Then, some runs would only produce one or two accepted issues which is frustrating because the agent has to start over to find more, so I added a loop mode that grades until 5 issues pass (with a configurable cap that defaults at 15). Lastly, when running multiple times, a lot of duplicate issues from previous runs would show up, so I added functionality for a log of graded issues so I dont regrade issues that were graded within the last 30 days.
 
 **Unit 6: [one line on the tool work]**
 
@@ -93,11 +94,10 @@ and add the link the moment your claim lands.]
 
 **Toolkit**
 
-- Tool: issue-scout (your scout: your search strategy, your rubric),
-  and how you used it
-- What it produced: [the scan and its verdict on this issue, described]
-- Difficulties: [where it fell short, or "none met" if none did]
-- What changed: [what you patched or would update, or "nothing"]
+- Tool: issue-scout, my search strategy (repo-first queries traced to my fit profile, ranking filters, a star range per run) and my rubric. I ran scans and a loop to find candidates, then graded home-assistant/android issues directly.
+- What it produced: accepting #5623 and #6025 in an android home assistant app, each passing every required check and 4 of 5 preferred, with a quoted fact behind every grade. In the same repo it rejected 4 of 13 for recent claims, open PRs, or work the maintainer said to split into many PRs.
+- Difficulties: issue search can't see stars, so my first scan surfaced brand-new solo repos. Checks based on names and titles misled me (a commit title, and a `Tile` enum entry that wasn't wired up). Open linked PRs count as live claims even when stalled for months.
+- What changed: repo-first search with a star range, an `existing-work` check that reads diffs instead of titles, a graded-issue log so nothing is regraded, and a loop mode. Still to add: a `-linked:pr` search filter and a staleness rule for linked PRs.
 
 ---
 
