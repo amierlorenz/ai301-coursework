@@ -10,7 +10,7 @@ files and no evidence uploads are part of Assignment 5.
 **Contribution Number:** [1]
 **Student:** Amier Davis
 **GitHub Username:** amierlorenz
-**Issue:** [GitHub issue link]
+**Issue:** https://github.com/home-assistant/android/issues/6025
 **Pull Request:** [GitHub PR link, once opened]
 
 One repository, built across units 5 to 8, telling the whole story of your real
@@ -61,11 +61,12 @@ or fell short, what changed because of it.]
 
 I built the search queries from my fit profile. My strategy originally scanned issues from repos that were brand new, so, I added a star range. Then, some runs would only produce one or two accepted issues which is frustrating because the agent has to start over to find more, so I added a loop mode that grades until 5 issues pass (with a configurable cap that defaults at 15). Lastly, when running multiple times, a lot of duplicate issues from previous runs would show up, so I added functionality for a log of graded issues so I dont regrade issues that were graded within the last 30 days.
 
-**Unit 6: [one line on the tool work]**
+**Unit 6: Refining the voice-guard**
 
 [2-4 sentences: the voice-guard, the repo-memory file. What broke or
 fell short, and what changed because of it. "Nothing broke" counts when
 it is true - say how you know.]
+The modified voice guard needed a lot of work to feel natural and adhere to oss best practices. For example, the claim-with-a-first-step check had a clause about needing to add a time to the commit message originally. In practice, this does not seem like a very good thing to do. there were also a part of this check that was too strict and would not work in all cases, so I modified this part.
 
 **Unit 7: [one line on the tool work]**
 
@@ -91,6 +92,9 @@ wild search and what you changed or would change, or what convinced
 you it held up. **Record the link to your claim comment in this section too.**
 Not claimed yet? Write `claim pending` and today's date where the link goes,
 and add the link the moment your claim lands.]
+I chose this issue becasue it is in a reasonably sized active repo and it fits within my interests and skillset. The skill fell short in a couple different ways, detailed in the toolkit entry below.
+
+https://github.com/home-assistant/android/issues/6025#issuecomment-6515775786
 
 **Toolkit**
 
