@@ -56,24 +56,16 @@ one in the week it belongs to.
 
 **Unit 5: making issue-scout my own**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
-
 I built the search queries from my fit profile. My strategy originally scanned issues from repos that were brand new, so, I added a star range. Then, some runs would only produce one or two accepted issues which is frustrating because the agent has to start over to find more, so I added a loop mode that grades until 5 issues pass (with a configurable cap that defaults at 15). Lastly, when running multiple times, a lot of duplicate issues from previous runs would show up, so I added functionality for a log of graded issues so I dont regrade issues that were graded within the last 30 days.
 
 **Unit 6: Refining the voice-guard**
 
-[2-4 sentences: the voice-guard, the repo-memory file. What broke or
-fell short, and what changed because of it. "Nothing broke" counts when
-it is true - say how you know.]
 The modified voice guard needed a lot of work to feel natural and adhere to oss best practices. For example, the claim-with-a-first-step check had a clause about needing to add a time to the commit message originally. In practice, this does not seem like a very good thing to do. there were also a part of this check that was too strict and would not work in all cases, so I modified this part.
 
 Draft note to rewrite: on 2026-11-11 the voice guard stopped `gh pr create` twice on my `getSavedWidget()` bullet under no-claims-without-evidence. The second stop was right: "removes a wait that made the new prefill tests flaky" claimed a cause with no evidence, so I added the load-test result (3 of 10 failures before, 10 of 10 passes after). The first stop flagged a plain description of my own diff, so I scoped the rule: in a PR description, what the PR's own diff changes counts as evidenced by the diff, while claims about causes or results still need evidence.
 
 **Unit 7: Troubleshooting the ship-gate**
 
-[2-4 sentences: the ship-gate and your gate manifest. What it produced
-on your real branch, what fought you, what changed because of it.]
 The final run of ship-gate on my branch all checks passed. Gating opening PRs behind this skill prevented me from submitting code that didn't pass tests. Something that fought me was that my skill diffed against my local main, but it was many commits behind because I pulled my feature branch up to date. Now, it diffs against upstream main.
 
 **Unit 8: [one line on the tool work]**
@@ -85,16 +77,6 @@ drafted, what you did with the draft.]
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs in your own words: how you searched, what your scan
-surfaced, what your scout's verdict said, why this issue fits your
-profile, and what you hope to learn. If your scout's verdict on it
-was reject and you chose it anyway, say so here and say why; choosing
-against your own tool silently is what loses points. Close with an
-honest read of the tool itself: where the scout fell short on a real
-wild search and what you changed or would change, or what convinced
-you it held up. **Record the link to your claim comment in this section too.**
-Not claimed yet? Write `claim pending` and today's date where the link goes,
-and add the link the moment your claim lands.]
 I chose this issue becasue it is in a reasonably sized active repo and it fits within my interests and skillset. The skill fell short in a couple different ways, detailed in the toolkit entry below.
 
 https://github.com/home-assistant/android/issues/6025#issuecomment-6515775786
