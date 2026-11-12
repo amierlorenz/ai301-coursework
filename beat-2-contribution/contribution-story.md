@@ -62,8 +62,6 @@ I built the search queries from my fit profile. My strategy originally scanned i
 
 The modified voice guard needed a lot of work to feel natural and adhere to oss best practices. For example, the claim-with-a-first-step check had a clause about needing to add a time to the commit message originally. In practice, this does not seem like a very good thing to do. there were also a part of this check that was too strict and would not work in all cases, so I modified this part.
 
-Draft note to rewrite: on 2026-11-11 the voice guard stopped `gh pr create` twice on my `getSavedWidget()` bullet under no-claims-without-evidence. The second stop was right: "removes a wait that made the new prefill tests flaky" claimed a cause with no evidence, so I added the load-test result (3 of 10 failures before, 10 of 10 passes after). The first stop flagged a plain description of my own diff, so I scoped the rule: in a PR description, what the PR's own diff changes counts as evidenced by the diff, while claims about causes or results still need evidence.
-
 **Unit 7: Troubleshooting the ship-gate**
 
 The final run of ship-gate on my branch all checks passed. Gating opening PRs behind this skill prevented me from submitting code that didn't pass tests. Something that fought me was that my skill diffed against my local main, but it was many commits behind because I pulled my feature branch up to date. Now, it diffs against upstream main.
