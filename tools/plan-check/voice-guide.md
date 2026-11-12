@@ -18,6 +18,14 @@ a reader can check, like a file with a line number, a command and its output,
 or a link. If I haven't reproduced it, I say "I suspect" or "it looks like,"
 never "the issue is."
 
+In a PR description, a statement about what this PR's own diff changes counts as
+evidenced by the diff. Claims about causes or results (a bug's cause, a test's
+flakiness, a speedup) still need checkable evidence.
+
+In a PR description, a statement about what this PR's own diff changes counts as
+evidenced by the diff. Claims about causes or results (a bug's cause, a test's
+flakiness, a speedup) still need checkable evidence.
+
 - Wrong: "The issue is that the cache never gets invalidated, so stale data is
 returned."
 - Right: "I suspect the cache isn't invalidated on update. `save()` in
@@ -63,8 +71,8 @@ config.yml && tool run` → `KeyError: 'name'`."
 ### Rule: transparent
 
 When I claim or work on an issue, I state plainly that I'm a first-time
-contributor to this repo and what I have and haven't verified. I don't hide
-that I'm new, and I don't lead with it as an excuse.
+contributor to this repo. I don't hide that I'm new, and I don't lead with it
+as an excuse.
 
 - Wrong: "I'll take this one, should be a quick fix."
 - Right: "I'd like to take this. It's my first contribution here, so I've read
@@ -75,3 +83,55 @@ test suite yet."
 
 I do not make promises I cannot keep. I do not rush or bother maintainers if I
 do not immediately get a response. I do not blame code or its authors.
+
+## Upstream: how I talk to maintainers
+
+### Claims I post
+
+#### Rule: claim-with-a-first-step
+
+A claim says what I'll do first. If the issue has an open design edge, the
+claim asks about it instead of guessing.
+
+- Wrong: "Can I work on this? I'll have a PR up today!"
+- Right: "I'd like to take this. My first step is moving the camera widget
+  config screen to Compose, keeping the current layout. One question first:
+  should the preview stay a static image, or switch to a live thumbnail?"
+
+#### Rule: never-claim-over-someone
+
+If someone else claimed the issue or has an open PR for it, even a stalled
+one, I ask them and the maintainer before I start, and I don't start until one
+of them answers.
+
+- Wrong: "This looks abandoned, so I'm going to pick it up."
+- Right: "@author, are you still working on this? Your draft PR #6499 hasn't
+  changed since July. If you've moved on, I'd be glad to take it over, if the
+  maintainers are okay with that."
+
+### Questions I ask
+
+#### Rule: one-answerable-question
+
+Each question I ask is one question a maintainer can answer without opening
+my machine. I include the exact command, file, or line I'm looking at and what
+I've already ruled out.
+
+- Wrong: "How does the widget stuff work? And where are the tests? Also is
+  Compose okay to use here?"
+- Right: "Should the new config screen go in `app/.../widgets/camera/` next to
+  the old Activity, or in `common/`? I checked CONTRIBUTING.md and the two
+  widgets already moved to Compose, and they use different spots."
+
+### Pings I send
+
+#### Rule: ping-on-their-rhythm
+
+I wait at least as long as this repo usually takes to reply (I check recent
+issues for that) before I ping, and I ping once with something new, like a
+pushed fix or a narrower question. I never ask "any update?"
+
+- Wrong: "Hi, just following up again! Any update on this? Would love to get
+  it merged soon."
+- Right: "I've addressed both review comments in 3f2a1c0. When you have time,
+  could you take another look? No rush."

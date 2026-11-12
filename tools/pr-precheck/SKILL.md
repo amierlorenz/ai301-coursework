@@ -18,7 +18,9 @@ answers based on evidence.
 This tool runs in one of the following:
 * Live mode:
   * the `plan.md` (with deviation notes)
-  * the diff on the dev branch vs main (use `git diff main...HEAD`)
+  * the diff on the dev branch vs the base it will merge into (use `git diff
+    upstream/main...HEAD` when an `upstream` remote exists, since a fork's local
+    `main` goes stale; otherwise `git diff main...HEAD`)
   * draft PR
   * test evidence read against the issue
   * the issue evidence from the issue in the repo

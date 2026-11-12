@@ -59,10 +59,10 @@ can be ready; a rubric that equates "less than everything" with
 
 | Check | Evidence | Pass condition | Weight |
 |---|---|---|---|
-| no-drift | plan comment by author (in thread), draft PR, diff | passes if the PR diff matches the original plan comment or the description of the PR explains the discrepancy | required |
-| is-tested | draft PR, reproduction comment | passes if 1) observable test evidence is present in the draft PR and 2) the evidence matches the repro comment | required |
+| no-drift | plan comment by author (in thread) or `plan.md` with its deviation notes, draft PR, diff | passes if the PR diff matches the plan, or the description of the PR explains the discrepancy. A change the plan lists (a step or a deviation note) passes without being repeated in the description | required |
+| is-tested | draft PR, `test_evidence.md`, reproduction comment | passes if 1) observable test evidence is present in the draft PR or in `test_evidence.md` and 2) the evidence matches the repro steps (from the repro comment, or the repro section of `test_evidence.md` when no repro comment was posted) | required |
 | reviewable | draft PR, diff | passes if there is no debris in the diff (i.e. commented out code, print/log statements, hardcoded testing values, unused code, or formatting noise like mixing tabs and spaces or trailing whitespace, build and environment artifacts like .DS_Store, .env, build/, etc) | required |
-| conforms-to-repo-standards | the repo's stated PR template and AI-use disclosure policy, the draft PR | passes if 1) draft PR includes all required sections (in order) and standards of the repo's PR template and 2) adheres to repo AI-use disclosure policy OR such a policy does not exist or does not apply | required |
+| conforms-to-repo-standards | the repo's stated PR template and AI-use disclosure policy, the draft PR | passes if 1) draft PR includes all required sections (in order) and standards of the repo's PR template and 2) adheres to repo AI-use disclosure policy OR such a policy does not exist or does not apply. A section that can only be filled after the PR opens (images added by drag-and-drop in GitHub's editor, the number of a companion PR) may hold an explicit placeholder that says so | required |
 
 ## Verdict rule
 

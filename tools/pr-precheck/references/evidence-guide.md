@@ -5,16 +5,18 @@
 * Where it lives: 
   * Live: the plan comment in the issue thread and `plan.md` (its scope,
     "will not touch" lines, and deviation notes); the branch diff
-    (`git diff main...HEAD --stat` for the file list, full diff for the
-    hunks); the draft PR description's "what this changes" claims.
+    (`git diff <base>...HEAD --stat` for the file list, full diff for the
+    hunks, where `<base>` is `upstream/main` when an `upstream` remote
+    exists and `main` otherwise); the draft PR description's "what this
+    changes" claims.
   * Eval: the plan-context block's scope pair (in-scope / not-in-scope)
     and any deviation notes; the candidate PR's diff and commit list; the
     candidate PR's description.
 
 * What good looks like:
   * Live: every changed file and hunk falls inside the plan's stated
-    scope or a deviation note in `plan.md` that the PR description
-    repeats; every in-scope item the plan promised appears in the diff or
+    scope or a deviation note in `plan.md` (the description doesn't
+    have to repeat what the plan lists); every in-scope item the plan promised appears in the diff or
     is named in the description as dropped or deferred, with the reason.
   * Eval: same rule against the scope pair: nothing in the diff the
     scope pair excludes or never names, nothing the scope promises
@@ -29,9 +31,11 @@
 
 * Where it lives:
   * Live: the draft PR's testing section and any captured test output
-    (terminal logs, CI run on the branch); the author's reproduction
-    comment in the issue thread (its steps and observed output); the
-    plan's test plan.
+    (terminal logs, CI run on the branch); `test_evidence.md`; the
+    author's reproduction comment in the issue thread (its steps and
+    observed output), or the repro section of `test_evidence.md` when no
+    repro comment was posted; the plan's test plan. Many repos don't put
+    a before/after in the PR itself, so `test_evidence.md` counts.
   * Eval: the candidate PR's test-evidence section, read against the
     plan-context block's test plan and the reproduction's steps; any
     stated outcome of the repo's own checks or suite.
@@ -52,9 +56,9 @@
 ## Diff quality (harness category: unreviewable)
 
 * Where it lives:
-  * Live: the branch diff (`git diff main...HEAD`, including
+  * Live: the branch diff (`git diff <base>...HEAD`, including
     `--stat` for stray files) and the commit list (`git log
-    main..HEAD`).
+    <base>..HEAD`), with `<base>` as above.
   * Eval: the candidate PR's unified diff and its commit list.
 
 * What good looks like: every hunk serves the fix the plan describes,
